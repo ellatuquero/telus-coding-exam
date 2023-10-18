@@ -12,7 +12,7 @@ Make sure you have `Node.js` & `NPM` installed on your system.
 3. Install dependencies using Yarn:
 > npm install
 
-## Import Coding Exam.postman_collection (sent on email)
+## Import Coding Exam.postman_collection
 1. Access Import Options:
 * In the Postman app, look for the "Import" button in the top left corner. It usually looks like an arrow pointing upwards.
 2. Choose Import Source:
@@ -31,9 +31,13 @@ That's it! You have successfully imported a Postman collection into your Postman
 
 ## API's Available
 > POST    /v1/ims/subscriber/add
+
 > GET     /v1/ims/subscriber
+
 > GET     /v1/ims/subscriber/:phoneNumber
+
 > UPDATE  /v1/ims/subscriber/:phoneNumber
+
 > DELETE  /v1/ims/subscriber/:phoneNumber
 
 
