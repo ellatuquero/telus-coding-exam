@@ -1,0 +1,11 @@
+node_modules
+package-lock.json
+dist
+.npmrc
+.DS_Store
+.env.development
+.env.hotfix
+.env.production
+.env.staging
+.env
+yarn-error.log

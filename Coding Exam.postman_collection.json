@@ -1,0 +1,815 @@
+{
+	"info": {
+		"_postman_id": "47467e58-832f-4a20-8623-9a7d951bdb0a",
+		"name": "Coding Exam",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14810767"
+	},
+	"item": [
+		{
+			"name": "Add Subscriber",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"16045906404\",\r\n    \"password\" : \"p@ssw0rd!\",\r\n    \"phoneNumber\" : 18675181011,\r\n    \"domain\" : \"ims.mnc660.mcc302.3gppnetwork.org\",\r\n    \"features\" : {\r\n        \"callForwardNoReply\" : {\r\n            \"provisioned\" : true,\r\n            \"destination\" : \"tel:+18675182801\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v1/ims/subscriber/add",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"ims",
+						"subscriber",
+						"add"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"16045906403\",\r\n    \"password\" : \"p@ssw0rd!\",\r\n    \"phoneNumber\" : 18675181010,\r\n    \"domain\" : \"ims.mnc660.mcc302.3gppnetwork.org\",\r\n    \"features\" : {\r\n        \"callForwardNoReply\" : {\r\n            \"provisioned\" : true,\r\n            \"destination\" : \"tel:+18675182800\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/v1/ims/subscriber/add",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"ims",
+								"subscriber",
+								"add"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "402"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"192-tpBGh1+l861myJSYtHGr28nJ8H4\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Oct 2023 09:54:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Successfully added a subscriber.\",\n    \"data\": {\n        \"subscriber\": {\n            \"username\": \"16045906403\",\n            \"phoneNumber\": 18675181010,\n            \"domain\": \"ims.mnc660.mcc302.3gppnetwork.org\",\n            \"status\": \"ACTIVE\",\n            \"features\": {\n                \"callForwardNoReply\": {\n                    \"provisioned\": true,\n                    \"destination\": \"tel:+18675182800\"\n                }\n            },\n            \"_id\": \"652fab459f525ed3992f4617\",\n            \"dateCreated\": \"2023-10-18T09:54:13.624Z\",\n            \"lastUpdated\": \"2023-10-18T09:54:13.624Z\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Invalid parameters",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/v1/ims/subscriber/add",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"ims",
+								"subscriber",
+								"add"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "567"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"237-EJ73LI/pw+qPFnyt7ayDlwHkcf0\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Oct 2023 09:54:30 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"errors\": [\n        {\n            \"message\": \"Username is required.\",\n            \"field\": \"username\"\n        },\n        {\n            \"message\": \"Password is required.\",\n            \"field\": \"password\"\n        },\n        {\n            \"message\": \"Phone number is required.\",\n            \"field\": \"phoneNumber\"\n        },\n        {\n            \"message\": \"Domain is required.\",\n            \"field\": \"domain\"\n        },\n        {\n            \"message\": \"Features callForwardNoReply (provisioned) is required.\",\n            \"field\": \"features.callForwardNoReply.provisioned\"\n        },\n        {\n            \"message\": \"Features callForwardNoReply (destination) is required.\",\n            \"field\": \"features.callForwardNoReply.destination\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Subscribers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/v1/ims/subscriber/:phoneNumber",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"ims",
+						"subscriber",
+						":phoneNumber"
+					],
+					"variable": [
+						{
+							"key": "phoneNumber",
+							"value": "18675181010"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get List - Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/v1/ims/subscriber/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"ims",
+								"subscriber",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "418"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a2-PHRqzISqPTHPIe1xnPMX4KOz0so\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Oct 2023 10:12:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Successfully retrieve the list of subscriber.\",\n    \"data\": {\n        \"subscribers\": [\n            {\n                \"features\": {\n                    \"callForwardNoReply\": {\n                        \"provisioned\": true,\n                        \"destination\": \"tel:+18675182800\"\n                    }\n                },\n                \"_id\": \"652fab459f525ed3992f4617\",\n                \"username\": \"16045906403\",\n                \"phoneNumber\": 18675181010,\n                \"domain\": \"ims.mnc660.mcc302.3gppnetwork.org\",\n                \"status\": \"ACTIVE\",\n                \"dateCreated\": \"2023-10-18T09:54:13.624Z\",\n                \"lastUpdated\": \"2023-10-18T09:54:13.624Z\"\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "Get Single - Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/v1/ims/subscriber/:phoneNumber",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"ims",
+								"subscriber",
+								":phoneNumber"
+							],
+							"variable": [
+								{
+									"key": "phoneNumber",
+									"value": "18675181010"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "416"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a0-w+gcBQ+Am/gqisXU8KYBR7chW6Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Oct 2023 10:19:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Successfully retrieve the single subscriber.\",\n    \"data\": {\n        \"subscriber\": {\n            \"features\": {\n                \"callForwardNoReply\": {\n                    \"provisioned\": false,\n                    \"destination\": \"tel:+18675182800\"\n                }\n            },\n            \"_id\": \"652fab459f525ed3992f4617\",\n            \"username\": \"16045906403\",\n            \"phoneNumber\": 18675181010,\n            \"domain\": \"ims.mnc660.mcc302.3gppnetwork.org\",\n            \"status\": \"ACTIVE\",\n            \"dateCreated\": \"2023-10-18T09:54:13.624Z\",\n            \"lastUpdated\": \"2023-10-18T09:54:13.624Z\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Get Single - Invalid parameter",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/v1/ims/subscriber/:phoneNumber",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"ims",
+								"subscriber",
+								":phoneNumber"
+							],
+							"variable": [
+								{
+									"key": "phoneNumber",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5a-vGuVD6QfxaFpoj5wj+VnChNI8/U\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Oct 2023 10:18:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"errors\": [\n        {\n            \"message\": \"Phone number is required.\",\n            \"field\": \"phoneNumber\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Subscriber",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"16045906403\",\r\n    \"password\" : \"p@ssw0rd!1212\",\r\n    \"phoneNumber\" : 18675181010,\r\n    \"domain\" : \"ims.mnc660.mcc302.3gppnetwork.org\",\r\n    \"features\" : {\r\n        \"callForwardNoReply\" : {\r\n            \"provisioned\" : false,\r\n            \"destination\" : \"tel:+18675182800\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{URL}}/v1/ims/subscriber/:phoneNumber",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"ims",
+						"subscriber",
+						":phoneNumber"
+					],
+					"variable": [
+						{
+							"key": "phoneNumber",
+							"value": "18675181010"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"16045906403\",\r\n    \"password\" : \"p@ssw0rd!1212\",\r\n    \"phoneNumber\" : 18675181010,\r\n    \"domain\" : \"ims.mnc660.mcc302.3gppnetwork.org\",\r\n    \"features\" : {\r\n        \"callForwardNoReply\" : {\r\n            \"provisioned\" : false,\r\n            \"destination\" : \"tel:+18675182800\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/v1/ims/subscriber/:phoneNumber",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"ims",
+								"subscriber",
+								":phoneNumber"
+							],
+							"variable": [
+								{
+									"key": "phoneNumber",
+									"value": "18675181010"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "410"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19a-IOAMsMLAy9NUJewqojynopf4MCw\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Oct 2023 10:57:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Successfully updated subscriber's info.\",\n    \"data\": {\n        \"subscriber\": {\n            \"features\": {\n                \"callForwardNoReply\": {\n                    \"provisioned\": false,\n                    \"destination\": \"tel:+18675182800\"\n                }\n            },\n            \"_id\": \"652fab459f525ed3992f4617\",\n            \"username\": \"16045906403\",\n            \"phoneNumber\": 18675181010,\n            \"domain\": \"ims.mnc660.mcc302.3gppnetwork.org\",\n            \"status\": \"ACTIVE\",\n            \"dateCreated\": \"2023-10-18T09:54:13.624Z\",\n            \"lastUpdated\": \"2023-10-18T09:54:13.624Z\"\n        }\n    }\n}"
+				},
+				{
+					"name": "Phone number is required - Invalid parameter",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\" : \"16045906403\",\r\n    \"password\" : \"p@ssw0rd!1212\",\r\n    \"phoneNumber\" : 18675181010,\r\n    \"domain\" : \"ims.mnc660.mcc302.3gppnetwork.org\",\r\n    \"features\" : {\r\n        \"callForwardNoReply\" : {\r\n            \"provisioned\" : false,\r\n            \"destination\" : \"tel:+18675182800\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/v1/ims/subscriber/:phoneNumber",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"ims",
+								"subscriber",
+								":phoneNumber"
+							],
+							"variable": [
+								{
+									"key": "phoneNumber",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5a-vGuVD6QfxaFpoj5wj+VnChNI8/U\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Oct 2023 11:02:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"errors\": [\n        {\n            \"message\": \"Phone number is required.\",\n            \"field\": \"phoneNumber\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Subscriber",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/v1/ims/subscriber/:phoneNumber",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"v1",
+						"ims",
+						"subscriber",
+						":phoneNumber"
+					],
+					"variable": [
+						{
+							"key": "phoneNumber",
+							"value": "16045906403"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Phone number is required - Invalid parameter",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/v1/ims/subscriber/:phoneNumber",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"ims",
+								"subscriber",
+								":phoneNumber"
+							],
+							"variable": [
+								{
+									"key": "phoneNumber",
+									"value": ""
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "90"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5a-vGuVD6QfxaFpoj5wj+VnChNI8/U\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Oct 2023 11:03:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"errors\": [\n        {\n            \"message\": \"Phone number is required.\",\n            \"field\": \"phoneNumber\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Does not Exist",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/v1/ims/subscriber/:phoneNumber",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"ims",
+								"subscriber",
+								":phoneNumber"
+							],
+							"variable": [
+								{
+									"key": "phoneNumber",
+									"value": "16045906403"
+								}
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "91"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5b-voQG7AO5JQwg1fw8vrKZhr38PrM\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Oct 2023 11:09:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"errors\": [\n        {\n            \"message\": \"Something went wrong. Subscriber does not exist.\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/v1/ims/subscriber/:phoneNumber",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"v1",
+								"ims",
+								"subscriber",
+								":phoneNumber"
+							],
+							"variable": [
+								{
+									"key": "phoneNumber",
+									"value": "16045906403"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "126"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7e-GOuF/X+qE46uLaYGIgc77qL08Ds\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 18 Oct 2023 11:03:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Successfully deleted the subscriber.\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
